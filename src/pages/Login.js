@@ -52,6 +52,7 @@ class Login extends React.Component {
             name="email"
             value={ email }
             onChange={ this.handleChange }
+            className="block bg-neutral-900 rounded p-2 text-white"
           />
           <br />
           <input
@@ -61,9 +62,12 @@ class Login extends React.Component {
             name="password"
             value={ password }
             onChange={ this.handleChange }
+            className="block bg-neutral-900 rounded p-2 text-white"
           />
 
           <button
+            className="bg-green-400 p-3 mt-4 rounded-lg
+            shadow hover:bg-green-600 cursor-pointer text-black"
             type="submit"
             disabled={ onDisabled }
           >
