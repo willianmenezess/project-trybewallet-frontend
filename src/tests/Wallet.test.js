@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
-import userEvent from '@testing-library/user-event';
 
 describe('Testa o componente Wallet', () => {
   test('Verifica se ao inicializar a página Wallet apresenta os inputs do formulário para adicionar a despesa', () => {
