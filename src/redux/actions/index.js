@@ -4,6 +4,7 @@ import { fetchApiCurrency } from '../../services/fetchApi';
 export const USER_LOGIN = 'USER_LOGIN';
 export const FETCH_CURRENCY_SUCESS = 'FETCH_CURRENCY_SUCESS';
 export const FETCH_EXPENSE_SUCESS = 'FETCH_EXPENSE_SUCESS';
+export const EXPENSE_DELETE = 'EXPENSE_DELETE';
 
 // ACTIONS CREATORS
 export const userLogin = (email) => ({
@@ -29,6 +30,14 @@ const fetchExpenseSucess = (currentExpense) => ({
   },
 });
 
+export const expenseDelete = (expense) => ({
+  type: EXPENSE_DELETE,
+  payload: {
+    expense,
+  },
+});
+
+// ACTIONS THUNK
 // action thunk que vai atualizar o estado "currencies"(moedas) e "expenses", do estado global
 export const fetchCurrencyThunk = () => async (dispatch) => {
   try {
