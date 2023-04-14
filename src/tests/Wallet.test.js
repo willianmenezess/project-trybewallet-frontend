@@ -42,6 +42,8 @@ describe('Testa o componente Wallet', () => {
     expect(tagInput).toBeInTheDocument();
     expect(btnAddExpense).toBeInTheDocument();
 
-    userEvent.type(valueInput, '10');
+    userEvent.type(valueInput, '20');
+    userEvent.type(descriptionInput, 'temaki');
+    userEvent.click(btnAddExpense);
   });
 });
