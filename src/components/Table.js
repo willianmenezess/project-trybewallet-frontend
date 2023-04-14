@@ -12,7 +12,7 @@ class Table extends Component {
   };
 
   render() {
-    const { expenses } = this.props;
+    const { expenses, editExpense } = this.props;
     return (
       <section>
         <table>
@@ -48,7 +48,14 @@ class Table extends Component {
                 </td>
                 <td>Real</td>
                 <td>
-                  <button className="bg-blue-400 rounded-lg p-1">Editar</button>
+                  <button
+                    className="bg-blue-400 rounded-lg p-1"
+                    data-testid="edit-btn"
+                    onClick={ () => editExpense(expense) }
+                  >
+                    Editar
+
+                  </button>
                   <button
                     className="bg-red-400 rounded-lg p-1"
                     data-testid="delete-btn"
@@ -83,6 +90,7 @@ Table.propTypes = {
     }),
   ).isRequired,
   dispatch: PropTypes.func.isRequired,
+  editExpense: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);

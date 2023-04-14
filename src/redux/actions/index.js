@@ -5,6 +5,7 @@ export const USER_LOGIN = 'USER_LOGIN';
 export const FETCH_CURRENCY_SUCESS = 'FETCH_CURRENCY_SUCESS';
 export const FETCH_EXPENSE_SUCESS = 'FETCH_EXPENSE_SUCESS';
 export const EXPENSE_DELETE = 'EXPENSE_DELETE';
+export const EXPENSE_EDIT = 'EXPENSE_EDIT';
 
 // ACTIONS CREATORS
 export const userLogin = (email) => ({
@@ -34,6 +35,13 @@ export const expenseDelete = (expense) => ({
   type: EXPENSE_DELETE,
   payload: {
     expense,
+  },
+});
+
+export const editExpenseAction = (expenses) => ({
+  type: EXPENSE_EDIT,
+  payload: {
+    expenses,
   },
 });
 
