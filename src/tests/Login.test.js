@@ -15,7 +15,7 @@ describe('Testa a página de Login', () => {
     expect(btnLogin).toBeInTheDocument();
   });
 
-  test.only('Verifica o preenchimentos dos inputs e submit do botão e se o usuário é direcionado para a página de carteira ao clicar em "entrar"', async () => {
+  test('Verifica o preenchimentos dos inputs e submit do botão e se o usuário é direcionado para a página de carteira ao clicar em "entrar"', async () => {
     renderWithRouterAndRedux(<App />);
     const inputEmail = screen.getByRole('textbox');
     const inputPassword = screen.getByPlaceholderText(/digite sua senha/i);

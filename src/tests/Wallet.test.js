@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 
-describe('Testa o componente Wallet', () => {
+describe('Testa a página Wallet', () => {
   test('Verifica se ao inicializar a página Wallet apresenta os inputs do formulário para adicionar a despesa', () => {
     const initialState = {
       user: {
@@ -42,6 +42,7 @@ describe('Testa o componente Wallet', () => {
     expect(tagInput).toBeInTheDocument();
     expect(btnAddExpense).toBeInTheDocument();
 
+    // adiciona despesa nos inputs e insere na tabela
     userEvent.type(valueInput, '20');
     userEvent.type(descriptionInput, 'temaki');
     userEvent.click(btnAddExpense);
