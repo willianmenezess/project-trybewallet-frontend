@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CgProfile } from 'react-icons/cg';
+import { BsCashCoin } from 'react-icons/bs';
 
 class Header extends Component {
   render() {
@@ -10,11 +12,24 @@ class Header extends Component {
       .reduce((acc, expense) => acc + (Number(expense.value)
        * Number(expense.exchangeRates[expense.currency].ask)), 0);
     return (
-      <div className="flex gap-3 p-2">
-        <p data-testid="email-field">{email}</p>
-        <p data-testid="total-field">{sum.toFixed(2)}</p>
-        <p data-testid="header-currency-field">BRL</p>
-      </div>
+      <header>
+        <div className="pt-8 pb-3 text-center">
+          <span className="text-3xl">💸</span>
+          <span className="text-blue-800 text-2xl font-light"> Trybe</span>
+          <span className="text-green-400 font-extrabold text-2xl">Wallet</span>
+        </div>
+        <div className="flex flex-col items-center text-green-500 font-semibold">
+          <div className="flex justify-center items-center gap-1">
+            <CgProfile />
+            <p data-testid="email-field">{email}</p>
+          </div>
+          <div className="flex gap-1 justify-center items-center text-blue-700">
+            <BsCashCoin />
+            <p data-testid="total-field">{`Total de despesas: ${sum.toFixed(2)}`}</p>
+            <p data-testid="header-currency-field">BRL</p>
+          </div>
+        </div>
+      </header>
     );
   }
 }

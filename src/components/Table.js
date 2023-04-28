@@ -15,9 +15,10 @@ class Table extends Component {
     const { expenses, editExpense } = this.props;
     return (
       <section>
-        <table>
+        <h3 className="text-center font-bold text-lg">Despesas</h3>
+        <table className="flex justify-center">
           {/* <colgroup span={ expenses.length } className="columns" /> */}
-          <thead>
+          {/* <thead>
             <tr>
               <th>Descrição</th>
               <th>Tag</th>
@@ -29,27 +30,47 @@ class Table extends Component {
               <th>Moeda de conversão</th>
               <th>Editar/Excluir</th>
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             { expenses.map((expense) => (
-              <tr key={ expense.id }>
-                <td>{expense.description}</td>
-                <td>{expense.tag}</td>
-                <td>{expense.method}</td>
-                <td>{Number(expense.value).toFixed(2)}</td>
-                <td>
+              <tr key={ expense.id } className="flex flex-col space-y-1">
+                <td className="flex gap-2 bg-slate-200 rounded-md">
+                  <span className="font-bold">Descrição: </span>
+                  {expense.description}
+                </td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Tag: </span>
+                  {expense.tag}
+                </td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Método de Pagamento: </span>
+                  {expense.method}
+                </td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Valor: </span>
+                  {Number(expense.value).toFixed(2)}
+                </td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Moeda: </span>
                   {expense.exchangeRates[expense.currency].name}
 
                 </td>
-                <td>{Number(expense.exchangeRates[expense.currency].ask).toFixed(2)}</td>
-                <td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Câmbio utilizado: </span>
+                  {Number(expense.exchangeRates[expense.currency].ask).toFixed(2)}
+                </td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Valor convertido: </span>
                   {(Number(expense.value)
                   * Number(expense.exchangeRates[expense.currency].ask)).toFixed(2)}
                 </td>
-                <td>Real</td>
-                <td>
+                <td className="flex gap-2">
+                  <span className="font-bold">Moeda de conversão: </span>
+                  Real
+                </td>
+                <td className="pb-8">
                   <button
-                    className="bg-blue-400 rounded-lg p-1"
+                    className="bg-green-500 rounded-lg p-1 text-white font-semibold"
                     data-testid="edit-btn"
                     onClick={ () => editExpense(expense) }
                   >
@@ -57,7 +78,7 @@ class Table extends Component {
 
                   </button>
                   <button
-                    className="bg-red-400 rounded-lg p-1"
+                    className="bg-red-600 rounded-lg p-1 text-white font-semibold"
                     data-testid="delete-btn"
                     onClick={ () => this.deleteExpense(expense) }
                   >

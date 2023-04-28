@@ -83,12 +83,12 @@ class WalletForm extends Component {
     const { currencies } = this.props;
     const { value, description, currency, method, tag, edit } = this.state;
     return (
-      <section>
-        <form className="flex gap-3 p-4">
+      <section className="min-w-screen text-blue-700">
+        <form className="flex flex-col gap-3 p-4 font-bold">
           <label htmlFor="value-input">
             Valor:
             <input
-              className="block bg-neutral-900 rounded p-2 text-white"
+              className="block bg-blue-700 rounded p-2 text-white w-full"
               id="value-input"
               data-testid="value-input"
               name="value"
@@ -100,7 +100,7 @@ class WalletForm extends Component {
           <label htmlFor="description-input">
             Descrição:
             <input
-              className="block bg-neutral-900 rounded p-2 text-white"
+              className="block bg-blue-700 rounded p-2 text-white w-full"
               id="description-input"
               data-testid="description-input"
               name="description"
@@ -114,7 +114,7 @@ class WalletForm extends Component {
             <select
               id="currency-input"
               data-testid="currency-input"
-              className="block bg-neutral-900 rounded p-2 text-white"
+              className="block bg-blue-700 rounded p-2 text-white w-full"
               name="currency"
               value={ currency }
               onChange={ this.handleChange }
@@ -134,7 +134,7 @@ class WalletForm extends Component {
             <select
               id="method-input"
               data-testid="method-input"
-              className="block bg-neutral-900 rounded p-2 text-white"
+              className="block bg-blue-700 rounded p-2 text-white w-full"
               name="method"
               value={ method }
               onChange={ this.handleChange }
@@ -149,7 +149,7 @@ class WalletForm extends Component {
             <select
               id="tag-input"
               data-testid="tag-input"
-              className="block bg-neutral-900 rounded p-2 text-white"
+              className="block bg-blue-700 rounded p-2 text-white w-full"
               name="tag"
               value={ tag }
               onChange={ this.handleChange }
@@ -166,7 +166,7 @@ class WalletForm extends Component {
               <button
                 type="submit"
                 className="bg-green-400 p-3 mt-4 rounded-lg
-            shadow hover:bg-green-600 cursor-pointer text-black"
+            shadow hover:bg-green-600 cursor-pointer text-white w-full"
                 onClick={ this.editedExpense }
               >
                 Editar despesa
@@ -174,8 +174,8 @@ class WalletForm extends Component {
             ) : (
               <button
                 type="submit"
-                className="bg-green-400 p-3 mt-4 rounded-lg
-            shadow hover:bg-green-600 cursor-pointer text-black"
+                className="bg-green-500 p-3 mt-4 rounded-lg
+            shadow hover:bg-green-700 cursor-pointer text-white"
                 onClick={ this.handleSubmit }
               >
                 Adicionar despesa

@@ -42,39 +42,50 @@ class Login extends React.Component {
   render() {
     const { email, password, onDisabled } = this.state;
     return (
-      <section>
-        <div>Login</div>
-        <form onSubmit={ this.handleSubmit }>
-          <input
-            data-testid="email-input"
-            type="text"
-            placeholder="Digite seu email"
-            name="email"
-            value={ email }
-            onChange={ this.handleChange }
-            className="block bg-neutral-900 rounded p-2 text-white"
-          />
-          <br />
-          <input
-            data-testid="password-input"
-            type="password"
-            placeholder="Digite sua senha"
-            name="password"
-            value={ password }
-            onChange={ this.handleChange }
-            className="block bg-neutral-900 rounded p-2 text-white"
-          />
-
-          <button
-            className="bg-green-400 p-3 mt-4 rounded-lg
-            shadow hover:bg-green-600 cursor-pointer text-black"
-            type="submit"
-            disabled={ onDisabled }
+      <body
+        className="min-h-screen flex justify-center items-center bg-bg-login bg-top"
+      >
+        <main className="p-4 flex flex-col bg-white rounded-lg">
+          <div className="pt-8 pb-8 text-center">
+            <span className="text-2xl">💸</span>
+            <span className="text-blue-800 text-2xl font-light"> Trybe</span>
+            <span className="text-green-400 font-extrabold text-2xl">Wallet</span>
+          </div>
+          <form
+            className="space-y-3 w-60"
+            onSubmit={ this.handleSubmit }
           >
-            Entrar
-          </button>
-        </form>
-      </section>
+            <input
+              data-testid="email-input"
+              type="text"
+              placeholder="Email"
+              name="email"
+              value={ email }
+              onChange={ this.handleChange }
+              className="block rounded p-2 text-blue-700 border-2 border-blue-700
+              w-full"
+            />
+            <input
+              data-testid="password-input"
+              type="password"
+              placeholder="Senha (mín. 6 caracteres)"
+              name="password"
+              value={ password }
+              onChange={ this.handleChange }
+              className="block rounded p-2  text-blue-700 border-2
+               border-blue-700 w-full"
+            />
+            <button
+              className="bg-blue-700 p-2 rounded-lg
+              shadow hover:bg-blue-900 cursor-pointer text-white w-full font-bold"
+              type="submit"
+              disabled={ onDisabled }
+            >
+              Entrar
+            </button>
+          </form>
+        </main>
+      </body>
     );
   }
 }

@@ -13,10 +13,10 @@ class Wallet extends React.Component {
 
   render() {
     return (
-      <header>
+      <body>
         <Header />
         <WalletForm />
-      </header>
+      </body>
     );
   }
 }
