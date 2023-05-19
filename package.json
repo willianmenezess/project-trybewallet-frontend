@@ -20,8 +20,7 @@
     "redux-thunk": "2.4.2",
     "stylelint-order": "5.0.0"
   },
-
-  "homepage": "https://willianmenezess.github.io/project_trybewallet",
+  "homepage": "https://willianmenezess.github.io/project-trybewallet-frontend/",
   "scripts": {
     "cy": "env CY_CLI=true cypress run",
     "cy:open": "cypress open --e2e --browser chrome",
