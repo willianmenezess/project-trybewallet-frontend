@@ -20,7 +20,6 @@
     "redux-thunk": "2.4.2",
     "stylelint-order": "5.0.0"
   },
-  "homepage": "https://willianmenezess.github.io/project-trybewallet-frontend/",
   "scripts": {
     "cy": "env CY_CLI=true cypress run",
     "cy:open": "cypress open --e2e --browser chrome",
@@ -30,9 +29,7 @@
     "eject": "react-scripts eject",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
-    "lint:styles": "npx stylelint '**/*.css'",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint:styles": "npx stylelint '**/*.css'"
   },
   "eslintConfig": {
     "extends": "react-app"
