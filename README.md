@@ -1,6 +1,6 @@
 <h1> TrybeWallet </h1>
 <i> TrybeWallet é uma aplicação feita pra gerenciar despesas, com conversão de moedas de diversos países. </i>
-<img src="./public/Gravação de tela de 20-06-2023 12_38_29.gif">
+<img src="https://portfolio-two-opal-34.vercel.app/assets/2-e06f4e0b.png">
 <h1>Instalação</h1>
 Caso queira rodá-lo na sua máquina, primeiro faça o git clone, depois instale as depêndencias necessárias.
 <br/>
